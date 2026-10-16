@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/img-converter-common",
+    "crates/img-converter-core",
+    "crates/img-converter-worker",
+    "crates/img-converter-shell",
+    "crates/img-converter-installer",
+]
+
+[workspace.package]
+version = "1.0.0"
+edition = "2021"
+rust-version = "1.82"
+authors = ["stickylfs"]
+license = "MIT"
+repository = "https://github.com/stickylfs/img-converter"
+
+[workspace.dependencies]
+serde = { version = "1.0", features = ["derive"] }
+thiserror = "2.0"
+rayon = "1.10"
+
+[profile.release]
+opt-level = 3
+lto = "fat"
+codegen-units = 1
+panic = "abort"
+strip = true

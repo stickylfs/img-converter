@@ -1,0 +1,41 @@
+# Third-Party Notices
+
+img-converter includes the open-source components listed below. Their full
+license texts are available in the linked repositories and in the crate
+sources (`cargo vendor` or https://crates.io).
+
+## Main components
+
+| Component | License | Source |
+| :--- | :--- | :--- |
+| image (and its codec crates: png, jpeg-decoder/zune-jpeg, image-webp, gif, tiff, exr, ...) | MIT OR Apache-2.0 | https://github.com/image-rs/image |
+| exr | BSD-3-Clause | https://github.com/johannesvollmer/exrs |
+| ravif, avif-serialize | BSD-3-Clause | https://github.com/kornelski/cavif-rs |
+| rav1e | BSD-2-Clause | https://github.com/xiph/rav1e |
+| resvg, usvg, tiny-skia | Apache-2.0 OR MIT (tiny-skia: BSD-3-Clause) | https://github.com/linebender/resvg |
+| fontdb | MIT | https://github.com/RazrFalcon/fontdb |
+| image_dds, ddsfile | MIT | https://github.com/ScanMountGoat/image_dds |
+| kamadak-exif | BSD-2-Clause | https://github.com/kamadak/exif-rs |
+| pdf-writer | MIT OR Apache-2.0 | https://github.com/typst/pdf-writer |
+| lopdf | MIT | https://github.com/J-F-Liu/lopdf |
+| rayon | MIT OR Apache-2.0 | https://github.com/rayon-rs/rayon |
+| serde, thiserror | MIT OR Apache-2.0 | https://github.com/serde-rs, https://github.com/dtolnay/thiserror |
+| windows, windows-core | MIT OR Apache-2.0 | https://github.com/microsoft/windows-rs |
+
+## Other dependencies
+
+The remaining transitive dependencies are licensed under MIT, Apache-2.0,
+BSD-2-Clause, BSD-3-Clause, Zlib, Unlicense, CC0-1.0, BSL-1.0 or Unicode-3.0
+terms. Run `cargo tree` for the complete list.
+
+## Windows codecs
+
+AVIF, HEIC/HEIF and camera RAW files are decoded by codecs that are part of
+Windows or free Microsoft Store extensions ("AV1 Video Extension", "HEIF Image
+Extensions", "Raw Image Extension"). They are not distributed with img-converter.
+
+## Build-time only (not distributed)
+
+| Component | License | Source |
+| :--- | :--- | :--- |
+| winres | MIT | https://github.com/mxre/winres |

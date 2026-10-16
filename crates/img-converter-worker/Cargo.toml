@@ -1,0 +1,31 @@
+[package]
+name = "img-converter-worker"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
+publish = false
+description = "img-converter.exe: conversion process and command-line interface"
+
+[[bin]]
+name = "img-converter"
+path = "src/main.rs"
+
+[dependencies]
+img-converter-common = { path = "../img-converter-common" }
+img-converter-core = { path = "../img-converter-core" }
+windows = { version = "0.58", features = [
+    "Win32_Foundation",
+    "Win32_System_Com",
+    "Win32_System_LibraryLoader",
+    "Win32_System_SystemInformation",
+    "Win32_UI_Controls",
+    "Win32_UI_Shell",
+    "Win32_UI_WindowsAndMessaging",
+] }
+windows-core = "0.58"
+
+[build-dependencies]
+winres = "0.1"
